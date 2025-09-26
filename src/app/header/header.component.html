@@ -1,0 +1,25 @@
+<div>
+<nav class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <span class="L4-span-heading">KVS </span> <span class="L4-heading">Furniture</span>
+  </div>
+
+  <!-- Menu Items -->
+  <ul class="nav-links mb-0" [class.active]="isMenuOpen">
+    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/collections" routerLinkActive="active">Products</a></li>
+    <li><a routerLink="/about-us" routerLinkActive="active">About</a></li>
+  </ul>
+
+  <!-- Contact Button -->
+  <div class="contact-btn">
+    <button routerLink="/contact">Contact Us</button>
+  </div>
+
+  <!-- Mobile Menu Toggle -->
+  <div class="menu-toggle" (click)="isMenuOpen = !isMenuOpen">
+    ☰
+  </div>
+</nav>
+</div>

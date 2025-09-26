@@ -1,0 +1,165 @@
+<section class="hero">
+  <div class="hero-container">
+    <!-- Left Content -->
+    <div class="hero-text">
+      <p class="subtitle">FOR BEST INTERIOR</p>
+      <h1>
+        Timeless <span class="highlight">furniture,</span><br />
+        made to last
+      </h1>
+      <p class="description">
+        Crafted with care from finest materials. Inspired by timeless design
+        principles. Each piece is a blend of strength and style. Furniture you
+        will pass down, not replace.
+      </p>
+      <button class="btn">EXPLORE NOW</button>
+    </div>
+
+    <!-- Right Image -->
+    <div class="hero-image">
+      <img src="../../assets/images/dining-set.png" alt="Dining Furniture" />
+    </div>
+  </div>
+</section>
+
+<section class="craftsmanship">
+  <div class="container">
+    <!-- Left image -->
+    <div class="image-side">
+      <img src="assets/images/furniture-cabinet.png" alt="Cabinet" />
+    </div>
+
+    <!-- Right text -->
+    <div class="text-side">
+      <h2>Craftsmanship that stands the test of time</h2>
+      <p>
+        KVS Furniture is a reputable furniture company that has been operating
+        since 1991 in Nilambur Area, known for its exceptional quality and
+        craftsmanship in teak furniture.
+      </p>
+      <p>
+        With decades of experience, KVS Furniture has established itself as a
+        trusted brand in the industry, providing customers with a wide range of
+        beautifully designed and durable furniture pieces.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="collections">
+  <div class="header">
+    <div>
+      <h2>Collections</h2>
+      <p>made to inspire</p>
+    </div>
+    <a class="view-all" href="#">View all →</a>
+  </div>
+
+  <div class="cards">
+    <div class="card" *ngFor="let item of collections">
+      <span class="number">{{ item.id | number:'2.0' }}</span>
+      <img [src]="item.image" [alt]="item.title" />
+      <h3>{{ item.title }}</h3>
+    </div>
+  </div>
+</section>
+
+
+<div class="process-section">
+  <h2 class="title">Our manufacturing process</h2>
+  <p class="subtitle">
+    From raw materials to finished products, our meticulous process ensures exceptional quality in every piece.
+  </p>
+
+  <div class="steps-container">
+    <div class="step">
+      <div class="icon">
+        <i class="fas fa-tree"></i>
+      </div>
+      <h4>Material Selection</h4>
+      <p>We source only the finest sustainable materials for our furniture.</p>
+    </div>
+
+    <div class="step">
+      <div class="icon">
+        <i class="fas fa-pencil-ruler"></i>
+      </div>
+      <h4>Design & Planning</h4>
+      <p>Our designers create detailed plans for each piece of furniture.</p>
+    </div>
+
+    <div class="step">
+      <div class="icon">
+        <i class="fas fa-hammer"></i>
+      </div>
+      <h4>Crafting</h4>
+      <p>Skilled artisans handcraft each piece with precision and care.</p>
+    </div>
+
+    <div class="step">
+      <div class="icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h4>Quality Control</h4>
+      <p>Rigorous quality checks ensure every piece meets our standards.</p>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="best-sellers-section">
+  <div class="header">
+    <h2>Best<br />Sellers</h2>
+    <div class="view-all">
+      <span>Our featured products</span>
+      <a href="#" class="view-link">View all <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <div class="product-scroll-container">
+    <div class="product-card" *ngFor="let product of products">
+      <div class="card-image">
+        <img [src]="product.image" alt="Product image" />
+        <i class="fas fa-heart favorite-icon" *ngIf="product.favorite"></i>
+      </div>
+      <div class="card-content">
+        <h4>{{ product.name }}</h4>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="best-sellers-section" data-aos="fade-up">
+  <div class="header">
+    <h2 class="title">
+      Best <br />
+      <span>Sellers</span>
+    </h2>
+    <div class="view-all">
+      <span>Our featured products</span>
+      <a routerLink="/collections" class="view-link">
+        View all <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Scrollable product container -->
+  <div class="product-scroll-container" data-aos="fade-up" data-aos-delay="200">
+    <div class="product-card" *ngFor="let product of products" data-aos="zoom-in" data-aos-delay="300">
+      <div class="card-image">
+        <img [src]="product.image" alt="Product image" />
+        <i class="fas fa-heart favorite-icon" *ngIf="product.favorite"></i>
+      </div>
+      <div class="card-content">
+        <h4>{{ product.name }}</h4>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

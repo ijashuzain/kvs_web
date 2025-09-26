@@ -1,0 +1,73 @@
+.collections {
+  text-align: center;
+  padding: 50px 20px;
+  background: var(--light-white);
+  font-family: var(--my-font-family);
+}
+
+/* Heading */
+.section-heading h2 {
+  margin-bottom: 10px;
+}
+.section-heading p {
+  color: var(--gray);
+  margin-bottom: 30px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.tabs button {
+  padding: 8px 18px;
+  border: 1px solid var(--gray);
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.tabs button.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+.tabs button:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+.product-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+.product-card h4 {
+  margin-bottom: 5px;
+  color: var(--black);
+}
+.product-card p {
+  color: var(--gray);
+  font-size: 14px;
+}

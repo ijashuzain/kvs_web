@@ -1,0 +1,73 @@
+<section class="contact-section" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title">Let’s get in touch</h2>
+    <p class="section-subtitle">
+      Crafting comfort begins with a conversation, Contact us for custom designs and solutions
+    </p>
+
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info" data-aos="fade-right">
+        <h3>Contact Information</h3>
+        <ul>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Our Showroom</strong>
+              <p>123 Furniture Lane<br>Woodville, CA 90210</p>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <p>+1 (555) 123-4567<br>Monday–Friday: 9am–6pm</p>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>{{'info@woodlandfurniture.com'}}</p>
+            </div>
+          </li>
+        </ul>
+
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form" data-aos="fade-left">
+        <h3>Send Us a Message</h3>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <input type="text" formControlName="firstName" placeholder="First Name*" required>
+            <input type="text" formControlName="lastName" placeholder="Last Name*" required>
+          </div>
+          <div class="row">
+            <input type="email" formControlName="email" placeholder="Email Address*" required>
+            <input type="text" formControlName="phone" placeholder="Phone Number">
+          </div>
+          <div class="row">
+            <select formControlName="inquiryType" required>
+              <option value="">Please select..</option>
+              <option>General Inquiry</option>
+              <option>Product Inquiry</option>
+              <option>Custom Order</option>
+            </select>
+          </div>
+          <div class="row">
+            <textarea formControlName="message" rows="4" placeholder="Message*" required></textarea>
+          </div>
+          <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

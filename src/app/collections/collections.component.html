@@ -1,0 +1,28 @@
+<section class="collections">
+  <!-- Heading -->
+  <div class="section-heading">
+    <h2 class="L2-heading">
+      Our <span class="L2-span-heading">furniture</span> collections
+    </h2>
+    <p class="L1-text">Discover quality pieces that transform your space into a home</p>
+  </div>
+
+  <!-- Category Tabs -->
+  <div class="tabs">
+    <button
+      *ngFor="let category of categories"
+      (click)="selectCategory(category)"
+      [class.active]="selectedCategory === category">
+      {{ category }}
+    </button>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of filteredProducts">
+      <img [src]="product.image" [alt]="product.name">
+      <h4 class="L5-heading">{{ product.name }}</h4>
+      <p class="L2-text">{{ product.model }}</p>
+    </div>
+  </div>
+</section>

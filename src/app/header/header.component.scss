@@ -1,0 +1,97 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: var(--white);
+  border-bottom: 1px solid #eee;
+  font-family: var(--my-font-family);
+  position: relative;
+}
+
+/* Logo */
+// .logo {
+//   font-size: 22px;
+//   font-weight: 600;
+// }
+// .logo .brand {
+//   color: var(--primary-color);
+// }
+// .logo .light {
+//   color: var(--black);
+//   font-weight: 500;
+// }
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+  transition: 0.3s;
+  font-family: var(--my-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+}
+.nav-links li a.active {
+  color: var(--primary-color); /* active link */
+  gap: 10px !important;
+}
+.nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+/* Contact button */
+.contact-btn button {
+  padding: 8px 18px;
+  border: 1px solid var(--black);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--black);
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.contact-btn button:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Mobile Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid #eee;
+    display: none;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .contact-btn {
+    display: none; /* optional on mobile */
+  }
+}

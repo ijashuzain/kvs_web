@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #A76F3A;
+  --light-white: #FAFAFA;
+  --gray: #A2A2A2;
+  --black: #303030;
+  --white: #FFFFFF;
+
+  --my-font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.L1-heading {
+  font-family: var(--my-font-family);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--black);
+}
+
+.L1-span-heading {
+  font-family: var(--my-font-family);
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 100%;
+  font-style: bold;
+  color: var(--primary-color);
+}
+
+.L2-heading {
+  font-family: var(--my-font-family);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--black);
+}
+
+.L3-heading {
+  font-family: var(--my-font-family);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--black);
+}
+
+.L4-heading {
+  font-family: var(--my-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  font-style: bold;
+  color: var(--black);
+}
+
+.L4-span-heading {
+  font-family: var(--my-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  font-style: bold;
+  color: var(--primary-color);
+}
+
+.L5-heading {
+  font-family: var(--my-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  color: var(--black);
+}
+
+.L5-heading-primary {
+  font-family: var(--my-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  color: var(--primary-color);
+}
+
+.L1-text {
+  font-family: var(--my-font-family);
+  font-size: 22x;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--black);
+}
+
+.L1-text-primary {
+  font-family: var(--my-font-family);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--primary-color);
+}
+
+.L2-text {
+  font-family: var(--my-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--black);
+}
+
