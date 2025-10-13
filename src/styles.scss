@@ -15,7 +15,7 @@ body {
 
 .L1-heading {
   font-family: var(--my-font-family);
-  font-size: 64px;
+  font-size: 42px;
   font-weight: 400;
   line-height: 100%;
   color: var(--black);
@@ -23,7 +23,7 @@ body {
 
 .L1-span-heading {
   font-family: var(--my-font-family);
-  font-size: 64px;
+  font-size: 42px;
   font-weight: 600;
   line-height: 100%;
   font-style: bold;
@@ -32,10 +32,18 @@ body {
 
 .L2-heading {
   font-family: var(--my-font-family);
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 400;
   line-height: 100%;
   color: var(--black);
+}
+
+.L2-span-heading {
+  font-family: var(--my-font-family);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--primary-color);
 }
 
 .L3-heading {
@@ -102,5 +110,22 @@ body {
   font-weight: 400;
   line-height: 100%;
   color: var(--black);
+}
+
+.L2-text-primary {
+  font-family: var(--my-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+.L2-subtext {
+  font-family: var(--my-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--gray);
 }
 

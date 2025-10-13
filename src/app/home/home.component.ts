@@ -1,21 +1,45 @@
-import { DecimalPipe, NgFor, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ScrollService } from './service/scroll.service';
+import { DecimalPipe, NgClass, NgFor, NgIf } from '@angular/common';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import * as AOS from 'aos';
+interface CollectionItem {
+  id: number;
+  name: string;
+  image: string; // Placeholder for image URL
+}
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor , DecimalPipe , NgIf],
+  imports: [NgFor , DecimalPipe , NgIf , ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild('collectionsContainer', { static: false }) collectionsContainer!: ElementRef;
+  @ViewChild('productsContainer', { static: false }) productsContainer!: ElementRef;
+
+  currentIndex = {
+    collections: 0,
+    products: 0,
+  };
+
+  cardsInView = 3;
+  scrollStep = 1;
+
+  constructor(private scrollHelper: ScrollService) {}
+
     collections = [
-    { id: 1, title: 'Chairs', image: 'assets/images/chair.png' },
-    { id: 2, title: 'Tables', image: 'assets/images/table.png' },
-    { id: 3, title: 'Sofas', image: 'assets/images/sofa.png' },
-    { id: 4, title: 'Bedroom Set', image: 'assets/images/bedroom.jpg' },
-    { id: 5, title: 'Chairs', image: 'assets/images/chair.png' }
+    { id: 1, name: 'Chairs', image: 'assets/images/chair.png' },
+    { id: 2, name: 'Tables', image: 'assets/images/table.png' },
+    { id: 3, name: 'Sofas', image: 'assets/images/sofa.png' },
+    { id: 4, name: 'Bedroom Set', image: 'assets/images/bedroom.jpg' },
+    { id: 5, name: 'Chairs', image: 'assets/images/chair.png' },
+    { id: 1, name: 'Chairs', image: 'assets/images/chair.png' },
+    { id: 2, name: 'Tables', image: 'assets/images/table.png' },
+    { id: 3, name: 'Sofas', image: 'assets/images/sofa.png' },
+    { id: 4, name: 'Bedroom Set', image: 'assets/images/bedroom.jpg' },
+    { id: 5, name: 'Chairs', image: 'assets/images/chair.png' }
   ];
 
     products = [
@@ -78,4 +102,46 @@ export class HomeComponent implements OnInit {
     });
   }
 
+
+
+  next(section: 'collections' | 'products'): void {
+    const container = this.getContainer(section);
+    const total = section === 'collections' ? this.collections.length : this.products.length;
+
+    this.currentIndex[section] = this.scrollHelper.next(
+      container,
+      this.currentIndex[section],
+      this.cardsInView,
+      this.scrollStep,
+      total
+    );
+  }
+
+  prev(section: 'collections' | 'products'): void {
+    const container = this.getContainer(section);
+    this.currentIndex[section] = this.scrollHelper.prev(container, this.currentIndex[section], this.scrollStep);
+  }
+
+  private getContainer(section: 'collections' | 'products'): HTMLElement {
+    return section === 'collections'
+      ? this.collectionsContainer.nativeElement
+      : this.productsContainer.nativeElement;
+  }
+
+  // Swipe events for both sections
+  @HostListener('touchstart', ['$event'])
+  onTouchStart(event: TouchEvent): void {
+    this.scrollHelper.onTouchStart(event);
+  }
+
+  @HostListener('touchend', ['$event'])
+  onTouchEnd(event: TouchEvent): void {
+    const touchedEl = (event.target as HTMLElement).closest('.cards');
+    if (!touchedEl) return;
+
+    const isCollection = touchedEl.classList.contains('cards') && touchedEl.closest('.collections-section');
+    const section = isCollection ? 'collections' : 'products';
+
+    this.scrollHelper.onTouchEnd(event, touchedEl as HTMLElement, () => this.next(section), () => this.prev(section));
+  }
 }
