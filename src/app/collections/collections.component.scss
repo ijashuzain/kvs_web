@@ -1,8 +1,15 @@
 .collections {
   text-align: center;
   padding: 50px 20px;
-  background: var(--light-white);
+  background: var(--white);
   font-family: var(--my-font-family);
+}
+
+.L2-heading {
+  font-size: 48px !important;
+  .L2-span-heading {
+    font-size: 48px !important;
+  }
 }
 
 /* Heading */
@@ -28,7 +35,7 @@
   border-radius: 20px;
   background: transparent;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   transition: 0.3s;
 }
 .tabs button.active {
@@ -49,9 +56,10 @@
 }
 .product-card {
   background: var(--white);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 15px;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0px 1px 30px 4px #0000000D;
+  border: 1px solid #FAFAFA;
   transition: 0.3s;
 }
 .product-card:hover {

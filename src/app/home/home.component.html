@@ -1,18 +1,21 @@
 <section class="hero">
   <div class="hero-container">
     <!-- Left Content -->
-    <div class="hero-text">
-      <p class="subtitle">FOR BEST INTERIOR</p>
-      <h1>
-        Timeless <span class="highlight">furniture,</span><br />
-        made to last
-      </h1>
-      <p class="description">
-        Crafted with care from finest materials. Inspired by timeless design
-        principles. Each piece is a blend of strength and style. Furniture you
-        will pass down, not replace.
-      </p>
-      <button class="btn">EXPLORE NOW</button>
+    <div class="hero-text d-flex">
+      <hr>
+      <div class="hero-text">
+        <p class="subtitle">FOR BEST INTERIOR</p>
+        <h1 class="L1-heading">
+          Timeless <span class="highlight L1-span-heading">furniture,</span><br />
+          made to last
+        </h1>
+        <p class="description">
+          Crafted with care from finest materials. Inspired by timeless design
+          principles. Each piece is a blend of strength and style. Furniture you
+          will pass down, not replace.
+        </p>
+        <button class="btn">EXPLORE NOW</button>
+      </div>
     </div>
 
     <!-- Right Image -->
@@ -26,12 +29,12 @@
   <div class="container">
     <!-- Left image -->
     <div class="image-side">
+      <h2 class="L2-heading">Craftsmanship that stands the test of time</h2>
       <img src="assets/images/furniture-cabinet.png" alt="Cabinet" />
     </div>
 
     <!-- Right text -->
     <div class="text-side">
-      <h2>Craftsmanship that stands the test of time</h2>
       <p>
         KVS Furniture is a reputable furniture company that has been operating
         since 1991 in Nilambur Area, known for its exceptional quality and
@@ -46,7 +49,7 @@
   </div>
 </section>
 
-<section class="collections">
+<!-- <section class="collections">
   <div class="header">
     <div>
       <h2>Collections</h2>
@@ -58,25 +61,70 @@
   <div class="cards">
     <div class="card" *ngFor="let item of collections">
       <span class="number">{{ item.id | number:'2.0' }}</span>
-      <img [src]="item.image" [alt]="item.title" />
-      <h3>{{ item.title }}</h3>
+      <img [src]="item.image" [alt]="item.name" />
+      <h3>{{ item.name }}</h3>
     </div>
+  </div>
+</section> -->
+
+
+<section class="collections">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h1 class="L2-heading">Collections</h1>
+      <p class="L2-heading">made to inspire</p>
+    </div>
+    <a class="view-all" href="#">View all &rarr;</a>
+  </div>
+
+  <div class="carousel-container">
+    <button
+      class="arrow-button left"
+      (click)="prev('collections')"
+      [disabled]="currentIndex.collections === 0"
+      aria-label="Previous collection"
+    >
+      &larr;
+    </button>
+
+    <div class="cards-wrapper">
+      <div class="cards" #collectionsContainer>
+        <div
+          class="card"
+          *ngFor="let item of collections; let i = index"
+
+        >
+          <span class="number">{{ item.id | number:'2.0' }}</span>
+          <img [src]="item.image" [alt]="item.name" />
+          <h3>{{ item.name }}</h3>
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="arrow-button right"
+      (click)="next('collections')"
+      [disabled]="currentIndex.collections >= collections.length - cardsInView"
+      aria-label="Next collection"
+    >
+      &rarr;
+    </button>
   </div>
 </section>
 
 
 <div class="process-section">
-  <h2 class="title">Our manufacturing process</h2>
-  <p class="subtitle">
+  <h2 class="L2-heading pb-2">Our manufacturing process</h2>
+  <p class="L2-subtext">
     From raw materials to finished products, our meticulous process ensures exceptional quality in every piece.
   </p>
 
-  <div class="steps-container">
+  <div class="steps-container pt-5">
     <div class="step">
       <div class="icon">
         <i class="fas fa-tree"></i>
       </div>
-      <h4>Material Selection</h4>
+      <h4 class="L2-text">Material Selection</h4>
       <p>We source only the finest sustainable materials for our furniture.</p>
     </div>
 
@@ -84,7 +132,7 @@
       <div class="icon">
         <i class="fas fa-pencil-ruler"></i>
       </div>
-      <h4>Design & Planning</h4>
+      <h4 class="L2-text">Design & Planning</h4>
       <p>Our designers create detailed plans for each piece of furniture.</p>
     </div>
 
@@ -92,7 +140,7 @@
       <div class="icon">
         <i class="fas fa-hammer"></i>
       </div>
-      <h4>Crafting</h4>
+      <h4 class="L2-text">Crafting</h4>
       <p>Skilled artisans handcraft each piece with precision and care.</p>
     </div>
 
@@ -100,39 +148,17 @@
       <div class="icon">
         <i class="fas fa-check-circle"></i>
       </div>
-      <h4>Quality Control</h4>
+      <h4 class="L2-text">Quality Control</h4>
       <p>Rigorous quality checks ensure every piece meets our standards.</p>
     </div>
   </div>
 </div>
 
-<!-- <div class="best-sellers-section">
-  <div class="header">
-    <h2>Best<br />Sellers</h2>
-    <div class="view-all">
-      <span>Our featured products</span>
-      <a href="#" class="view-link">View all <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-
-  <div class="product-scroll-container">
-    <div class="product-card" *ngFor="let product of products">
-      <div class="card-image">
-        <img [src]="product.image" alt="Product image" />
-        <i class="fas fa-heart favorite-icon" *ngIf="product.favorite"></i>
-      </div>
-      <div class="card-content">
-        <h4>{{ product.name }}</h4>
-        <p>{{ product.description }}</p>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 
 <div class="best-sellers-section" data-aos="fade-up">
   <div class="header">
-    <h2 class="title">
+    <h2 class="L2-heading">
       Best <br />
       <span>Sellers</span>
     </h2>
@@ -144,18 +170,31 @@
     </div>
   </div>
 
-  <!-- Scrollable product container -->
-  <div class="product-scroll-container" data-aos="fade-up" data-aos-delay="200">
-    <div class="product-card" *ngFor="let product of products" data-aos="zoom-in" data-aos-delay="300">
-      <div class="card-image">
-        <img [src]="product.image" alt="Product image" />
-        <i class="fas fa-heart favorite-icon" *ngIf="product.favorite"></i>
-      </div>
-      <div class="card-content">
-        <h4>{{ product.name }}</h4>
-        <p>{{ product.description }}</p>
+
+  <div class="d-flex align-items-center">
+    <!-- Scrollable product container -->
+    <button class="arrow-button left" (click)="prev('products')" [disabled]="currentIndex.products === 0"
+      aria-label="Previous collection">
+      &larr;
+    </button>
+    <div class="product-scroll-container" #productsContainer >
+
+      <div class="product-card" *ngFor="let product of products" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card-image">
+          <img [src]="product.image" alt="Product image" />
+          <i class="fas fa-heart favorite-icon" *ngIf="product.favorite"></i>
+        </div>
+        <div class="card-content">
+          <h4>{{ product.name }}</h4>
+          <p>{{ product.description }}</p>
+        </div>
       </div>
     </div>
+
+    <button class="arrow-button right" (click)="next('products')"
+      [disabled]="currentIndex.products >= products.length - cardsInView" aria-label="Next collection">
+      &rarr;
+    </button>
   </div>
 </div>
 

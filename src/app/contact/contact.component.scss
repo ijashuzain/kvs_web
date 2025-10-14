@@ -5,6 +5,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.L1-text {
+font-size: 22px !important;
+}
+
 .section-title {
   font-size: 2rem;
   font-weight: 600;
@@ -17,11 +21,13 @@
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  // grid-template-columns: 1fr 2fr;
   gap: 40px;
-  align-items: flex-start;
+  // align-items: flex-start;
   text-align: left;
+
+
 }
 
 .contact-info ul {
@@ -35,10 +41,26 @@
   margin-bottom: 20px;
 }
 
+hr {
+  width: 1px;
+  height: 80%;
+  background-color: #ccc;
+  border: none;
+  transform: rotate(180deg);
+  margin-right: 20px;
+}
+
 .contact-info i {
-  font-size: 20px;
-  color: #9c652f;
+  font-size: 16px;
+  color: var(--white);
+  background: var(--primary-color);
   margin-right: 15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-icons a {
@@ -100,5 +122,10 @@
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  hr{
+    display: none;
   }
 }
