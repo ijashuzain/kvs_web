@@ -7,13 +7,16 @@
 
   <!-- Menu Items -->
   <ul class="nav-links mb-0" [class.active]="isMenuOpen">
-    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/collections" routerLinkActive="active">Products</a></li>
-    <li><a routerLink="/about-us" routerLinkActive="active">About</a></li>
+    <li><a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a></li>
+    <li><a routerLink="/collections" routerLinkActive="active" (click)="closeMenu()">Products</a></li>
+    <li><a routerLink="/about-us" routerLinkActive="active" (click)="closeMenu()">About</a></li>
+    <li class="contact-btn">
+      <button routerLink="/contact" (click)="closeMenu()">Contact Us</button>
+    </li>
   </ul>
 
-  <!-- Contact Button -->
-  <div class="contact-btn">
+  <!-- Desktop Contact Button -->
+  <div class="contact-btn desktop-contact">
     <button routerLink="/contact">Contact Us</button>
   </div>
 

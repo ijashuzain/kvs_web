@@ -100,6 +100,38 @@ export class HomeComponent implements OnInit {
       duration: 800,
       once: true
     });
+    
+    // Log screen size
+    this.logScreenSize();
+  }
+
+  private logScreenSize(): void {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const screenWidth = screen.width;
+    const screenHeight = screen.height;
+    
+    console.log('=== SCREEN SIZE INFO ===');
+    console.log('Window size:', width + 'x' + height);
+    console.log('Screen size:', screenWidth + 'x' + screenHeight);
+    console.log('Device pixel ratio:', window.devicePixelRatio);
+    
+    // Determine screen category
+    let category = '';
+    if (width <= 767) {
+      category = 'Mobile';
+    } else if (width <= 1024) {
+      category = 'Tablet';
+    } else if (width <= 1439) {
+      category = 'Desktop';
+    } else if (width <= 2559) {
+      category = 'Large Desktop';
+    } else {
+      category = '4K/Ultra Large';
+    }
+    
+    console.log('Screen category:', category);
+    console.log('========================');
   }
 
 

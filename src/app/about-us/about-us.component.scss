@@ -1,7 +1,7 @@
 .about-section {
   background: url('../../assets/images/wood-pattern.png') no-repeat center;
   background-size: cover;
-  padding: 80px 20px;
+  padding: 80px 6% !important;
   font-family: var(--my-font-family);
 }
 
@@ -13,9 +13,11 @@
 }
 .section-title h2 {
   margin-bottom: 10px;
+  transition: font-size 0.3s ease;
 }
 .section-title p {
   color: var(--gray);
+  transition: font-size 0.3s ease;
 }
 
 /* Layout */
@@ -24,7 +26,7 @@
   align-items: center;
   justify-content: center;
   gap: 60px;
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   flex-wrap: wrap; /* responsive */
 }
@@ -47,6 +49,7 @@
   color: var(--black);
   text-align: left;
   line-height: 1.6;
+  transition: font-size 0.3s ease;
 }
 .about-content p {
   margin-bottom: 15px;
@@ -64,22 +67,113 @@
 //     gap: 40px;
 //   }
 // }
-@media (min-width: 700px) and (max-width: 1024px) {
+/* Tablet responsive design (768px-1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about-section {
+    padding: 60px 6% !important;
+  }
+
+  .section-title h2 {
+    font-size: 24px !important;
+  }
+
+  .section-title p {
+    font-size: 12px !important;
+  }
+
   .about-container {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     text-align: center;
   }
-  .L2-text-primary {
-    text-align: left;
-    font-size: 15px;
+
+  .about-content {
+    font-size: 12px;
   }
 
+  .about-content p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .about-image img {
+    max-width: 300px;
+  }
 }
 
-@media (max-width: 1024px) {
+/* Desktop responsive design (1025px+) - Same font sizes as 1024px */
+@media (min-width: 1025px) {
+  .about-section {
+    padding: 80px 6% !important;
+  }
+
+  .section-title h2 {
+    font-size: 24px !important; /* Same as 1024px */
+  }
+
+  .section-title p {
+    font-size: 12px !important; /* Same as 1024px */
+  }
+
   .about-container {
+    gap: 50px;
+  }
+
+  .about-content {
+    font-size: 12px; /* Same as 1024px */
+  }
+
+  .about-image img {
+    max-width: 400px; /* Image size can adjust */
+  }
+}
+
+/* Large displays (1440px+) - Image sizes can adjust, font sizes same as 1024px */
+@media (min-width: 1440px) {
+  .about-section {
+    padding: 100px 6% !important;
+  }
+
+  .section-title h2 {
+    font-size: 24px !important; /* Same as 1024px */
+  }
+
+  .section-title p {
+    font-size: 12px !important; /* Same as 1024px */
+  }
+
+  .about-container {
+    gap: 80px;
+  }
+
+  .about-content {
+    font-size: 12px; /* Same as 1024px */
+  }
+
+  .about-image img {
+    max-width: 500px; /* Image size can adjust */
+  }
+}
+
+
+/* Mobile responsive design (767px and below) */
+@media (max-width: 767px) {
+  .about-section {
+    padding: 40px 6% !important;
+  }
+
+  .about-container {
+    flex-direction: column;
     gap: 30px;
-    display: flex;
+    text-align: center;
+  }
+
+  .about-content {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .about-image img {
+    max-width: 250px;
   }
 }

@@ -1,6 +1,6 @@
 .footer {
   background: #FAFAFA;
-  padding: 40px 20px;
+  padding: 40px 6% !important;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -12,9 +12,10 @@
 }
 
 .footer-col h4 {
-  font-size: 16px;
-  margin-bottom: 12px;
+  font-size: 14px;
+  margin-bottom: 10px;
   font-weight: 600;
+  transition: font-size 0.3s ease;
 }
 
 .footer-col ul {
@@ -30,8 +31,8 @@
 .footer-col ul li a {
   color: #303030;
   text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s;
+  font-size: 12px;
+  transition: color 0.3s, font-size 0.3s ease;
 }
 
 .footer-col ul li a:hover {
@@ -39,8 +40,9 @@
 }
 
 .brand {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+  transition: font-size 0.3s ease;
 }
 
 .highlight {
@@ -48,16 +50,17 @@
 }
 
 .tagline {
-  margin: 10px 0;
+  margin: 8px 0;
   color: #666;
-  font-size: 14px;
+  font-size: 12px;
+  transition: font-size 0.3s ease;
 }
 
 .social-icons a {
   margin-right: 10px;
-  font-size: 16px;
+  font-size: 14px;
   color: #303030;
-  transition: color 0.3s;
+  transition: color 0.3s, font-size 0.3s ease;
 }
 
 .social-icons a:hover {
@@ -66,13 +69,15 @@
 
 .footer-bottom {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  text-align: center;
+  align-items: center;
+  text-align: left;
   border-top: 1px solid #eee;
   padding-top: 15px;
-  font-size: 13px;
+  font-size: 11px;
   color: #666;
+  transition: font-size 0.3s ease;
 }
 
 .footer-links {
@@ -83,16 +88,277 @@
   margin: 0 8px;
   color: #303030;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 11px;
+  transition: font-size 0.3s ease;
 }
 
 .footer-links a:hover {
   color: #A76F3A;
 }
 
-@media (min-width: 768px) {
+/* Tablet responsive design (768px-1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer {
+    padding: 30px 6% !important;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .footer-col h4 {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .footer-col ul li a {
+    font-size: 10px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .tagline {
+    font-size: 10px;
+  }
+
+  .social-icons a {
+    font-size: 12px;
+  }
+
   .footer-bottom {
     flex-direction: row;
     text-align: left;
+    font-size: 9px;
+  }
+
+  .footer-links a {
+    font-size: 9px;
+  }
+}
+
+/* Desktop responsive design (1025px-1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .footer {
+    padding: 40px 6% !important;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  .footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .footer-col ul li a {
+    font-size: 13px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .tagline {
+    font-size: 13px;
+  }
+
+  .social-icons a {
+    font-size: 16px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+  }
+}
+
+/* Large displays (1440px-1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .footer {
+    padding: 50px 6% !important;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .footer-col ul li a {
+    font-size: 14px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+  }
+}
+
+/* Large Desktop (1920px-2559px) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .footer {
+    padding: 60px 7% !important;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 35px;
+    margin-bottom: 35px;
+  }
+
+  .footer-col h4 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul li a {
+    font-size: 15px;
+  }
+
+  .brand {
+    font-size: 24px;
+  }
+
+  .tagline {
+    font-size: 15px;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+  }
+
+  .footer-bottom {
+    font-size: 14px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+}
+
+/* 4K displays (2560px+) */
+@media (min-width: 2560px) {
+  .footer {
+    padding: 80px 8% !important;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-col h4 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .footer-col ul li a {
+    font-size: 16px;
+  }
+
+  .brand {
+    font-size: 26px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .social-icons a {
+    font-size: 22px;
+  }
+
+  .footer-bottom {
+    font-size: 15px;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+}
+
+/* Mobile responsive design (767px and below) */
+@media (max-width: 767px) {
+  .footer {
+    padding: 25px 6% !important;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-col h4 {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .footer-col ul li a {
+    font-size: 11px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .tagline {
+    font-size: 11px;
+  }
+
+  .social-icons {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    font-size: 13px;
+    margin: 0 8px;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    text-align: left;
+    font-size: 10px;
+  }
+
+  .footer-links {
+    margin-top: 10px;
+  }
+
+  .footer-links a {
+    font-size: 10px;
+    margin: 0 5px;
   }
 }

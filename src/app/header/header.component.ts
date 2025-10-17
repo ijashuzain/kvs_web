@@ -9,4 +9,8 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
 isMenuOpen = false;
+
+closeMenu() {
+  this.isMenuOpen = false;
+}
 }

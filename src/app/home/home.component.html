@@ -29,7 +29,7 @@
   <div class="container">
     <!-- Left image -->
     <div class="image-side">
-      <h2 class="L2-heading">Craftsmanship that stands the test of time</h2>
+      <h2 class="L2-heading">Craftsmanship<br />that stands the test of time</h2>
       <img src="assets/images/furniture-cabinet.png" alt="Cabinet" />
     </div>
 
@@ -114,12 +114,12 @@
 
 
 <div class="process-section">
-  <h2 class="L2-heading pb-2">Our manufacturing process</h2>
+  <h2 class="L2-heading">Our manufacturing process</h2>
   <p class="L2-subtext">
     From raw materials to finished products, our meticulous process ensures exceptional quality in every piece.
   </p>
 
-  <div class="steps-container pt-5">
+  <div class="steps-container">
     <div class="step">
       <div class="icon">
         <i class="fas fa-tree"></i>
@@ -156,47 +156,47 @@
 
 
 
-<div class="best-sellers-section" data-aos="fade-up">
-  <div class="header">
-    <h2 class="L2-heading">
-      Best <br />
-      <span>Sellers</span>
-    </h2>
-    <div class="view-all">
-      <span>Our featured products</span>
-      <a routerLink="/collections" class="view-link">
-        View all <i class="fas fa-arrow-right"></i>
-      </a>
+<section class="best-sellers-section">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h1 class="L2-heading">Best Sellers</h1>
+      <p class="L2-heading">Our featured products</p>
     </div>
+    <a class="view-all" href="#">View all &rarr;</a>
   </div>
 
-
-  <div class="d-flex align-items-center">
-    <!-- Scrollable product container -->
-    <button class="arrow-button left" (click)="prev('products')" [disabled]="currentIndex.products === 0"
-      aria-label="Previous collection">
+  <div class="carousel-container">
+    <button
+      class="arrow-button left"
+      (click)="prev('products')"
+      [disabled]="currentIndex.products === 0"
+      aria-label="Previous product"
+    >
       &larr;
     </button>
-    <div class="product-scroll-container" #productsContainer >
 
-      <div class="product-card" *ngFor="let product of products" data-aos="zoom-in" data-aos-delay="300">
-        <div class="card-image">
-          <img [src]="product.image" alt="Product image" />
-          <i class="fas fa-heart favorite-icon" *ngIf="product.favorite"></i>
-        </div>
-        <div class="card-content">
-          <h4>{{ product.name }}</h4>
-          <p>{{ product.description }}</p>
+    <div class="cards-wrapper">
+      <div class="cards" #productsContainer>
+        <div
+          class="card"
+          *ngFor="let product of products; let i = index"
+        >
+          <img [src]="product.image" [alt]="product.name" />
+          <h3>{{ product.name }}</h3>
         </div>
       </div>
     </div>
 
-    <button class="arrow-button right" (click)="next('products')"
-      [disabled]="currentIndex.products >= products.length - cardsInView" aria-label="Next collection">
+    <button
+      class="arrow-button right"
+      (click)="next('products')"
+      [disabled]="currentIndex.products >= products.length - cardsInView"
+      aria-label="Next product"
+    >
       &rarr;
     </button>
   </div>
-</div>
+</section>
 
 
 
