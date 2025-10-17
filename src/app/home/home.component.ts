@@ -1,5 +1,5 @@
 import { ScrollService } from './service/scroll.service';
-import { DecimalPipe, NgClass, NgFor, NgIf } from '@angular/common';
+import { DecimalPipe, NgClass, NgFor } from '@angular/common';
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import * as AOS from 'aos';
 interface CollectionItem {
@@ -10,7 +10,7 @@ interface CollectionItem {
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor , DecimalPipe , NgIf , ],
+  imports: [NgFor , DecimalPipe ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

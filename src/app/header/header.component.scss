@@ -12,7 +12,7 @@
   margin: 0 auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     padding: var(--spacing-md) 6%;  /* 24px 6% on tablet+ */
   }
 }
@@ -52,7 +52,7 @@
   padding: 0;
   margin: 0;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     display: flex;
     gap: var(--spacing-xl);  /* 48px gap */
     position: static;
@@ -106,7 +106,7 @@
 .contact-btn {
   display: none;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     display: block;
 
     button {
@@ -138,7 +138,7 @@
   border: none;
   color: var(--black);
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     display: none;
   }
 }

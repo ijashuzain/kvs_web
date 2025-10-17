@@ -12,7 +12,7 @@ hr {
   position: relative;
   overflow: hidden;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     padding: var(--spacing-xl) 6%;  /* 48px 6% on tablet+ */
   }
 }
@@ -76,7 +76,7 @@ hr {
   max-width: 100%;
   margin: 0 auto;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -753,7 +753,6 @@ hr {
 
 
 /* --- Variables & Base Styles --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 $color-brown: #a76f3a;
 $color-blue: #3b82f6;

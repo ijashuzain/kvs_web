@@ -4,7 +4,7 @@
   background: var(--white);
   font-family: var(--my-font-family);
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     padding: var(--spacing-xl) 6%;  /* 48px 6% on tablet+ */
   }
 }
@@ -79,20 +79,20 @@
   grid-template-columns: 1fr;  /* Single column on mobile */
   gap: var(--spacing-md);  /* 24px gap */
 
-  @media (min-width: $bp-sm) {
+  @media (min-width: 480px) {
     grid-template-columns: repeat(2, 1fr);  /* 2 columns on small phones */
   }
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);  /* 3 columns on tablets */
     gap: var(--spacing-lg);  /* 32px gap */
   }
 
-  @media (min-width: $bp-lg) {
+  @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);  /* 4 columns on large tablets */
   }
 
-  @media (min-width: $bp-xl) {
+  @media (min-width: 1440px) {
     grid-template-columns: repeat(5, 1fr);  /* 5 columns on desktop */
   }
 }

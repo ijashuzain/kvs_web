@@ -3,7 +3,7 @@
   padding: var(--spacing-lg) var(--spacing-sm);  /* Mobile first: 32px 16px */
   font-family: var(--my-font-family);
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     padding: var(--spacing-xl) 6%;  /* 48px 6% on tablet+ */
   }
 }
@@ -14,11 +14,11 @@
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
 
-  @media (min-width: $bp-sm) {
+  @media (min-width: 480px) {
     grid-template-columns: repeat(2, 1fr);  /* 2 columns on small phones */
   }
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);  /* 4 columns on tablets */
   }
 }
@@ -100,7 +100,7 @@
   color: #666;
   transition: font-size 0.3s ease;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
@@ -113,7 +113,7 @@
   gap: var(--spacing-sm);
   flex-wrap: wrap;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     justify-content: flex-end;
   }
 

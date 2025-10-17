@@ -4,7 +4,7 @@
   text-align: center;
   font-family: var(--my-font-family);
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     padding: var(--spacing-xl) 6%;  /* 48px 6% on tablet+ */
   }
 }
@@ -62,7 +62,7 @@ font-size: 22px !important;
   gap: 0;
   text-align: left;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     flex-direction: row;
     gap: var(--spacing-xl);  /* 48px */
   }
@@ -86,7 +86,7 @@ font-size: 22px !important;
 hr {
   display: none;  /* Hidden on mobile */
 
-  @media (min-width: $bp-md) {
+  @media (min-width: 768px) {
     display: block;
     width: 1px;
     height: 80%;
@@ -151,7 +151,7 @@ hr {
     flex-direction: column;
     gap: var(--spacing-sm);
 
-    @media (min-width: $bp-md) {
+    @media (min-width: 768px) {
       flex-direction: row;
       gap: var(--spacing-md);
 
