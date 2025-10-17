@@ -7,10 +7,14 @@ hr {
 
 .hero {
   background: #FAFAFA;
-  padding: 60px 6% !important;
-  font-family: 'Poppins', sans-serif;
+  padding: var(--spacing-md) var(--spacing-sm);  /* Mobile first: 24px 16px */
+  font-family: var(--my-font-family);
   position: relative;
   overflow: hidden;
+
+  @media (min-width: $bp-md) {
+    padding: var(--spacing-xl) 6%;  /* 48px 6% on tablet+ */
+  }
 }
 
 /* Premium Hero Animations */
@@ -65,20 +69,27 @@ hr {
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: var(--spacing-md);  /* 24px on mobile */
   max-width: 100%;
   margin: 0 auto;
+
+  @media (min-width: $bp-md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--spacing-xl);  /* 48px on tablet+ */
+  }
 }
 
 .hero-text .subtitle {
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
   font-weight: 400;
   letter-spacing: 2px;
   color: #666666;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-sm);
   text-transform: uppercase;
 }
 
@@ -95,21 +106,21 @@ hr {
 }
 
 .hero-text .description {
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: 400;
   line-height: 1.6;
   color: #666666;
-  margin-bottom: 30px;
+  margin-bottom: var(--spacing-lg);
   max-width: 500px;
 }
 
 .btn {
-  padding: 8px 20px;
+  padding: var(--spacing-sm) var(--spacing-md);  /* 16px 24px */
   background: #333333;
   color: #fff;
   border: none;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: clamp(12px, 2vw, 14px);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -202,7 +213,7 @@ hr {
 
 .text-side h2 {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 400;
   color: #303030;
   margin-bottom: 20px;
 }

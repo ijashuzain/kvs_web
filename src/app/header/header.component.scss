@@ -1,28 +1,37 @@
-/* Navbar Container - Updated padding to 6% */
+/* Navbar Container - Mobile First */
 .navbar {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 2px 6% !important;
+  padding: var(--spacing-md) var(--spacing-sm);  /* Mobile first: 24px 16px */
   background: var(--white);
-  // border-bottom: 1px solid #eee;
   font-family: var(--my-font-family);
   position: relative;
   z-index: 1000;
   max-width: 100%;
   margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  @media (min-width: $bp-md) {
+    padding: var(--spacing-md) 6%;  /* 24px 6% on tablet+ */
+  }
 }
 
 /* Logo */
 .logo {
-  justify-self: start;
-}
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 600;
+  white-space: nowrap;
 
-.logo .L4-span-heading,
-.logo .L4-heading {
-  font-size: 18px !important;
-  font-weight: 600 !important;
-  transition: font-size 0.3s ease, font-weight 0.3s ease;
+  .L4-span-heading {
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+
+  .L4-heading {
+    color: var(--black);
+    font-weight: 600;
+  }
 }
 // .logo {
 //   font-size: 22px;
@@ -39,18 +48,51 @@
 /* Links */
 .nav-links {
   list-style: none;
-  display: flex;
-  gap: 35px;
+  display: none;  /* Hidden on mobile */
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: $bp-md) {
+    display: flex;
+    gap: var(--spacing-xl);  /* 48px gap */
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: auto;
+  }
+
+  /* Mobile menu (shown when .active) */
+  &.active {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    width: 100vw;  /* Full viewport width on mobile */
+    border-top: 1px solid #eee;
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
 }
 .nav-links li a {
   text-decoration: none;
   color: var(--black);
   font-weight: 500;
-  transition: 0.3s, font-size 0.3s ease, font-weight 0.3s ease;
-  font-family: var(--my-font-family);
-  font-size: 14px;
-  font-weight: 500;
+  transition: color 0.3s;
+  font-size: clamp(14px, 2.5vw, 16px);
   line-height: 1.2;
+
+  &.active {
+    color: var(--primary-color);
+  }
+
+  &:hover {
+    color: var(--primary-color);
+  }
 }
 .nav-links li a.active {
   color: var(--primary-color); /* active link */
@@ -60,9 +102,45 @@
   color: var(--primary-color);
 }
 
-/* Contact button */
+/* Contact button - hidden on mobile */
 .contact-btn {
-  justify-self: end;
+  display: none;
+
+  @media (min-width: $bp-md) {
+    display: block;
+
+    button {
+      padding: var(--spacing-xs) var(--spacing-md);
+      border: 1px solid var(--black);
+      border-radius: 20px;
+      background: transparent;
+      color: var(--black);
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s;
+      font-size: clamp(12px, 2.5vw, 14px);
+
+      &:hover {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--white);
+      }
+    }
+  }
+}
+
+/* Hamburger menu - visible on mobile only */
+.menu-toggle {
+  display: block;
+  font-size: 26px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--black);
+
+  @media (min-width: $bp-md) {
+    display: none;
+  }
 }
 .contact-btn button {
   padding: 8px 16px;

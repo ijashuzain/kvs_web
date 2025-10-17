@@ -1,22 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Breakpoints - Mobile First */
+$bp-xs: 320px;      // Extra small phones
+$bp-sm: 480px;      // Small phones
+$bp-md: 768px;      // Tablets
+$bp-lg: 1024px;     // Large tablets
+$bp-xl: 1440px;     // Desktop
+
+/* Color & Typography Variables */
 :root {
   --primary-color: #A76F3A;
   --light-white: #FAFAFA;
   --gray: #A2A2A2;
   --black: #303030;
   --white: #FFFFFF;
-
   --my-font-family: 'Poppins', sans-serif;
+
+  /* Responsive Spacing */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-sm: 1rem;      /* 16px */
+  --spacing-md: 1.5rem;    /* 24px */
+  --spacing-lg: 2rem;      /* 32px */
+  --spacing-xl: 3rem;      /* 48px */
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--my-font-family);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
 .L1-heading {
   font-family: var(--my-font-family);
-  font-size: 64px;
-  font-weight: 400;
+  font-size: clamp(28px, 6vw, 64px);
+  font-weight: 400 !important;
   line-height: 1.2;
   color: var(--black);
   transition: font-size 0.3s ease, line-height 0.3s ease;
@@ -32,24 +48,11 @@ body {
 
 .L2-heading {
   font-family: var(--my-font-family);
-  font-size: 40px;
-  font-weight: 400;
+  font-size: clamp(24px, 5vw, 40px);
+  font-weight: 400 !important;
   line-height: 1.2;
   color: var(--black);
   transition: font-size 0.3s ease, line-height 0.3s ease;
-}
-
-/* Responsive font sizes for L2-heading */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .L2-heading {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 767px) {
-  .L2-heading {
-    font-size: 28px;
-  }
 }
 
 .L2-span-heading {
