@@ -89,6 +89,11 @@
 .gray-text {
   color: var(--gray);
 }
+
+.highlight {
+  color: #A76F3A;
+}
+
 .mt-20 {
   margin-top: 20px;
 }
@@ -191,21 +196,46 @@
 /* Mobile responsive design (767px and below) */
 @media (max-width: 767px) {
   .about-section {
-    padding: 40px 6% !important;
+    padding: 24px 6% !important;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .section-title h2 {
+    font-size: 13px !important;
+    margin-bottom: 4px;
+  }
+
+  .section-title p {
+    font-size: 8px !important;
+    line-height: 1.5;
   }
 
   .about-container {
     flex-direction: column;
-    gap: 30px;
-    text-align: center;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .about-image {
+    display: none;
   }
 
   .about-content {
-    text-align: center;
-    font-size: 14px;
+    text-align: left;
+    font-size: 8px;
   }
 
-  .about-image img {
-    max-width: 250px;
+  .about-content p {
+    font-size: 8px !important;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .mt-20 {
+    margin-top: 10px;
   }
 }

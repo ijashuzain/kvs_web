@@ -23,6 +23,16 @@ font-size: 22px !important;
   padding-bottom: 1.5rem; /* Replace Bootstrap pb-4 */
 }
 
+.contact-form .form-title {
+  font-size: clamp(20px, 3.5vw, 28px) !important;
+  font-weight: 700 !important;
+  text-align: center;
+}
+
+.highlight {
+  color: #A76F3A;
+}
+
 .contact-info,
 .contact-form {
   width: 100%;
@@ -345,42 +355,114 @@ hr {
 /* Mobile responsive design (767px and below) */
 @media (max-width: 767px) {
   .contact-section {
-    padding: 40px 6% !important;
+    padding: 24px 6% !important;
+    text-align: center;
+  }
+
+  .contact-wrapper {
+    text-align: center;
+  }
+
+  .L2-heading {
+    font-size: 13px !important;
+    margin-bottom: 4px;
+  }
+
+  .section-subtitle {
+    font-size: 8px !important;
+    line-height: 1.5;
+    margin-bottom: 16px;
   }
 
   .contact-grid {
     flex-direction: column;
-    gap: 30px;
-  }
-
-  .section-title {
-    font-size: 20px !important;
-  }
-
-  .section-subtitle {
-    font-size: 14px !important;
+    gap: 16px;
+    text-align: left;
   }
 
   .contact-info h3,
   .contact-form h3 {
-    font-size: 16px !important;
+    font-size: 10px !important;
+    margin-bottom: 8px;
+    padding-bottom: 0;
+  }
+
+  .contact-form .form-title {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .contact-info ul {
+    margin-bottom: 12px;
   }
 
   .contact-info li {
-    font-size: 13px;
-    margin-bottom: 15px;
+    font-size: 8px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+
+  .contact-info i {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .contact-info strong {
+    font-size: 8px;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .contact-info p {
+    font-size: 7px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .contact-info h4 {
+    font-size: 8px;
+    margin: 12px 0 8px 0;
+  }
+
+  .social-icons {
+    margin-bottom: 16px;
+  }
+
+  .social-icons a {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+    margin-right: 8px;
+  }
+
+  .contact-form .row {
+    gap: 8px;
+    margin-bottom: 8px;
   }
 
   .contact-form input,
   .contact-form select,
   .contact-form textarea {
-    font-size: 13px;
-    padding: 10px;
+    font-size: 8px;
+    padding: 6px;
+    border-radius: 4px;
+  }
+
+  .contact-form textarea {
+    min-height: 60px;
   }
 
   .contact-form button {
-    padding: 10px 20px;
-    font-size: 13px;
+    padding: 6px 12px;
+    font-size: 8px;
+    border-radius: 12px;
+    align-self: center;
   }
 
   hr {

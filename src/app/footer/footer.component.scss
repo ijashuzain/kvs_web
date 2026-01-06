@@ -348,54 +348,71 @@
 /* Mobile responsive design (767px and below) */
 @media (max-width: 767px) {
   .footer {
-    padding: 25px 6% !important;
+    padding: 24px 6% !important;
   }
 
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 20px;
-    text-align: center;
+    gap: 16px;
+    text-align: left;
   }
 
   .footer-col h4 {
-    font-size: 13px;
-    margin-bottom: 8px;
+    font-size: 10px;
+    margin-bottom: 4px;
+    font-weight: 500;
   }
 
-  .footer-col ul li a {
-    font-size: 11px;
+  .footer-col ul li {
+    margin-bottom: 4px;
+
+    a {
+      font-size: 8px;
+    }
   }
 
   .brand {
-    font-size: 16px;
+    font-size: 13px;
+    margin-bottom: 4px;
   }
 
   .tagline {
-    font-size: 11px;
+    font-size: 8px;
+    margin: 4px 0;
+    line-height: 1.4;
   }
 
   .social-icons {
-    text-align: center;
-    margin-top: 10px;
+    text-align: left;
+    margin-top: 8px;
   }
 
   .social-icons a {
-    font-size: 13px;
-    margin: 0 8px;
+    font-size: 10px;
+    margin-right: 8px;
+    margin-left: 0;
   }
 
   .footer-bottom {
-    flex-direction: row;
-    text-align: left;
-    font-size: 10px;
+    flex-direction: column;
+    text-align: center;
+    font-size: 7px;
+    gap: 8px;
+    padding-top: 12px;
+  }
+
+  .footer-bottom p {
+    margin: 0;
   }
 
   .footer-links {
-    margin-top: 10px;
+    justify-content: center;
+    margin-top: 0;
+    gap: 8px;
   }
 
   .footer-links a {
-    font-size: 10px;
-    margin: 0 5px;
+    font-size: 7px;
+    margin: 0;
   }
 }
