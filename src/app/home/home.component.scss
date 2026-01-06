@@ -179,7 +179,7 @@ hr {
     display: block;
 
     @media (max-width: 767px) {
-      width: 50%;
+      width: 65%;
     }
   }
 }
@@ -273,7 +273,7 @@ hr {
     display: contents;
     
     p {
-      font-size: 8px !important;
+      font-size: 10px !important;
       line-height: 1.5;
       margin-bottom: 10px;
       text-align: left;
@@ -594,7 +594,7 @@ hr {
 
   .L2-subtext {
     @media (max-width: 767px) {
-      font-size: 8px !important;
+      font-size: 10px !important;
       margin-bottom: 16px;
       text-align: left;
       line-height: 1.5;
@@ -694,7 +694,7 @@ hr {
     z-index: 2;
 
     @media (max-width: 767px) {
-      font-size: 10px !important;
+      font-size: 12px !important;
       margin: 0 0 2px 0;
       font-weight: 500;
     }
@@ -708,7 +708,7 @@ hr {
     z-index: 2;
 
     @media (max-width: 767px) {
-      font-size: 7px !important;
+      font-size: 9px !important;
       margin: 0;
       line-height: 1.4;
     }
@@ -788,7 +788,7 @@ hr {
   }
 
   .subtitle{
-    font-size: 8px !important;
+    font-size: 10px !important;
   }
 }
 
